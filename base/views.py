@@ -1,24 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 
 # Create your views here.
 
-
-products = [
-    {'id': 1, 'name': 'Drinks'},
-    {'id': 2, 'name': 'Food'},
-    {'id': 3, 'name': 'At Home Coffee'},
-    {'id': 4, 'name': 'Merchandise'},
-
-]
-
+# menus = [
+#     {'id': 1, 'name': 'Drinks'},
+#     {'id': 2, 'name': 'Food'},
+#     {'id': 3, 'name': 'At Home Coffee'},
+#     {'id': 4, 'name': 'Merchandise'},
+# ]
 
 def home(request):
-    context = {'products': products}
-    return render(request, 'home.html', context)
+    menus = Categories.objects.all()
+    context = {'menus': menus}
+    return render(request, 'base/home.html', context)
 
 
-def menu(request):
-    return render(request, 'menu.html')
+def menu(request, pk ):
+    menu = Categories.objects.get(id=pk)
+    context = {'menu': menu}
+
+    return render(request, 'base/menu.html', context)
 
 
