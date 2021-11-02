@@ -3,12 +3,17 @@
 {% block content %}
 
     <div>
-        <div>
-            {% for menu in menus %}
+
+         <div class="menu-wrapper">
+                {% for menu in menus %}
                 <div>
-                    <h4>{{ menu.id }} -- <a href="{% url 'menu' menu.id %}">{{ menu.name }}</a></h4>
-                </div>
-            {% endfor %}
+                    <div class="">
+{#                        <img class="thumbnail" src="{{ post.thumbnail.url }}" alt="">#}
+                            <p class="">{{ menu.name}}</p>
+                    </div>
+                 </div>
+
+                {% endfor %}
         </div>
     </div>
 

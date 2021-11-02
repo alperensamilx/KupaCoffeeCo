@@ -1,13 +1,29 @@
-<div>
-    <a href="/">
-        <h1>Logo</h1>
-    </a>
-</div>
+{% load static %}
+<header>
+        <div class="header-container">
 
-<div>
-    <a href="../base/templates/base/menu.html">
-        <h2>Menu</h2>
-    </a>
-</div>
+            <div class="left-nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{% static 'images/logo.pdf' %}" alt="">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li>Menu</li>
+                        <li>Rewards</li>
+                    </ul>
+                </nav>
+            </div>
 
+            <div class="right-nav">
+                <div class="sign-in">
+                    Sign in
+                </div>
+                <div class="join-now">
+                    Join now
+                </div>
+            </div>
+        </div>
+    </header>
 <hr>
