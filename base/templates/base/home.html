@@ -6,15 +6,11 @@
 
          <div class="menu-wrapper">
                 {% for menu in menus %}
-                <div>
-                    <div class="">
-{#                        <img class="thumbnail" src="{{ post.thumbnail.url }}" alt="">#}
-                            <p class="">{{ menu.name}}</p>
+                    <div class="menu">
+                        <p class="">{{ menu.name}}</p>
                     </div>
-                 </div>
-
                 {% endfor %}
-        </div>
-    </div>
+
+         </div>
 
 {% endblock %}
