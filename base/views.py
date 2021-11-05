@@ -18,3 +18,5 @@ def menu(request, pk ):
     return render(request, 'base/menu.html', context)
 
 
+def login(request):
+    return render(request, 'base/login.html')
