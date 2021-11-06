@@ -38,6 +38,5 @@ p, li, span, label, input, textarea {
 .footer {
     text-align: center;
     color: rgb(110, 110, 110);
-    bottom:0;
-    position: absolute;
+    /*bottom:0;*/
 }
