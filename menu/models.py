@@ -11,9 +11,17 @@ class Categories(models.Model):
         return self.name
 
 
-class Drinks(models.Model):
-    name = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name='drinks')
+class Products(models.Model):
+    name = models.CharField(max_length=32)
     price = models.IntegerField(max_length=8)
 
     def __str__(self):
         return self.name
+
+
+class Drinks(models.Model):
+    categories = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name='categories')
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product')
+
+    def __str__(self):
+        return self.categories
