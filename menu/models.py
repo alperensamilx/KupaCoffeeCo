@@ -13,15 +13,8 @@ class Categories(models.Model):
 
 class Products(models.Model):
     name = models.CharField(max_length=32)
-    price = models.IntegerField(max_length=8)
+    price = models.IntegerField()
 
     def __str__(self):
         return self.name
 
-
-class Drinks(models.Model):
-    categories = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name='categories')
-    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product')
-
-    def __str__(self):
-        return self.categories
